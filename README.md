@@ -17,19 +17,23 @@ The similarity with the Estudy clone was random and just for fun! If you don't k
 
 ## Screenshots
 
-Login Screen
+
 ![2017-07-14 21_07_14-university students system](https://user-images.githubusercontent.com/16108478/28224898-72bdb74c-68d9-11e7-8ac8-c636e5e060b1.png)
 
 Permitted Operations depending on the user (Role-Based System)
 ![2017-07-14 21_14_55-logincheck](https://user-images.githubusercontent.com/16108478/28224932-8da91c18-68d9-11e7-8561-b9c709ccf0ab.png)
 
-Show Marks
+
 ![2017-07-14 21_15_12-logincheck](https://user-images.githubusercontent.com/16108478/28224933-8dacea82-68d9-11e7-81ef-4daff7f282af.png)
 
 
 ## Similarity With the Original Website
 
-You can check [Estudy of TEI of Athens](estudy.teiath.gr/unistudent/).
+You can check [Estudy TEI of Athens](estudy.teiath.gr/unistudent/).
+
+## Usage
+
+You can install it on any server that supports .JSP / (.war files). There are many tutorials online about it. Then there is the .sql where needs to imported with a platform like PhpMyadmin, MySQL Workbench etc. 
 
 ## Disclaimer
 
