@@ -30,7 +30,7 @@ You can check [Estudy TEI of Athens](https://estudy.teiath.gr/unistudent/).
 
 ## Usage
 
-You can install it on any server that supports .JSP / (.war files). There are many tutorials online about it. Then there is the .sql where needs to imported with a platform like PhpMyadmin, MySQL Workbench etc. 
+You can install it on any server that supports .JSP / (.war files). There are many tutorials online about it. Then there is the "DB_to_be_imported.sql" which needs to imported using a platform like PhpMyadmin, MySQL Workbench etc. 
 
 ## Disclaimer
 
