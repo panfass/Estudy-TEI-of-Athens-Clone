@@ -1,0 +1,10 @@
+﻿angular.module('students', [])
+     .controller('FormController', ['$scope', function ($scope) {
+         var vm = this;
+         function activate() {
+             
+             //
+
+         }
+         activate();
+     }]);

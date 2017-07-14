@@ -1,0 +1,722 @@
+
+<!-- saved from url=(0066)file:///C:/Users/Takis/Desktop/UNIVERSITY%20STUDENTS%20SYSTEM.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1253"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<meta name="GENERATOR" content="Microsoft Visual Studio 6.0">
+
+<meta http-equiv="Content-Language" content="el">
+<meta name="theme-color" content="#e5e5c7">
+<link rel="stylesheet" type="text/css" href="./index_files/Unistudent.css">
+<title>UNIVERSITY STUDENTS SYSTEM</title>
+<script language="javascript">
+<!--
+if (navigator.userAgent.indexOf("Gecko")!=-1)
+{
+//Add Event Listeners
+document.addEventListener('click', function (e) {window.event=e;window.event.srcElement=e.target}, true); 
+document.addEventListener('mouseover', function (e) {window.event=e;window.event.srcElement=e.target}, true); 
+document.addEventListener('onmouseout', function (e) {window.event=e;window.event.srcElement=e.target}, true); 
+document.addEventListener('onresize', function (e) {window.event=e;window.event.srcElement=e.target}, true); 
+}
+function window_onunload() {
+	if (window.event.clientX < 0 && window.event.clientY < 0)
+	 {
+	   //location.href="disconnect.asp"
+	 }
+}
+//-->
+</script>
+    <script type="text/javascript" src="./index_files/jquery-2.2.4.min.js.download" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index_files/angular.min.js.download" integrity="sha384-yIqa4x9Cpx9ZK4TKjprtQfMzhBQaotZRqdvNR6Y0Ozb+/2TaeBTqxr9ko1tQhSgU" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index_files/angular-messages.min.js.download" integrity="sha384-Whow1AP9yk/ncZXeszCVRcuw25o+1dys5YTJ6Fgik5SyciRZZeoqs06xP2rzXtPO" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index_files/angular-animate.min.js.download" integrity="sha384-kN5JkHYVPirSqYGT8T8yiWjSk7dQbwE7Ri8B1e6mTaESqPk0ZzezoykQuUGixa2X" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index_files/angular-aria.min.js.download" integrity="sha384-v9WdzVGR+rwdUVZhBdPNBQa55DL0m/SZZOhsvm42Rh/G+8y4dzb8ptTJws5d/vY1" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index_files/ngStorage.min.js.download" integrity="sha384-f6S49lisxpydi1pZg4rpv6aIrhPhDHoLyKUpeuOL9F5zmJVeWqUYfr1+s/yAMVvz" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index_files/app.js.download"></script>
+<style type="text/css">
+   input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border:solid 1px #cd5c5c !important;
+  }
+
+    .ng-field .ng-error-messages {
+        padding-top: 4px;
+        color:#cd5c5c !important;
+        font-weight: normal !important;
+    }
+ 
+  form.ng-invalid input[type=submit],  form.ng-invalid input[type=button] {
+      border:solid 1px #ccc;
+    background-color: #ddd;
+    color:#aaa;
+}
+
+ul {
+    list-style-type: none;
+    padding: 6px;
+}
+li {padding-bottom: 1px;}
+.informintro {
+    font-style: italic;
+    color: #f72564;
+}
+
+
+</style>
+<script type="text/javascript">(function(window) { if (typeof window === 'undefined') { return; }window.FormValidations = [{'name':'userName','required':true,'maxlength':45,'message':'Το όνομα χρήστη δεν είναι έγκυρο. Ελέγξτε τους χαρακτήρες και βεβαιωθείτε ότι δεν υπάρχουν κενά.','pattern':'/^[\\u00E1-\\u03CEA-Z0-9a-z._-]+(@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6})?$/'},{'name':'pwd','required':true,'maxlength':36,'message':'','pattern':'/^.{0,36}$/'},{'name':'userdep','required':false,'maxlength':0,'message':'','pattern':'/^(\\d+)$/'},{'name':'userdep1','required':false,'maxlength':0,'message':'','pattern':'/^(\\d+)$/'},{'name':'userdep2','required':false,'maxlength':0,'message':'','pattern':'/^(\\d+)$/'},{'name':'rdStudiesLevel2','required':false,'maxlength':0,'message':'','pattern':'/^(\\d+)$/'},{'name':'userdepname','required':false,'maxlength':0,'message':'','pattern':'/^[\\u00E1-\\u03CEa-z\\-\\s\\.0-9]{0,120}$/'},{'name':'loginTrue','required':false,'maxlength':0,'message':'','pattern':'/^login$/'}]; })(window);</script>
+<script type="text/javascript">
+    angular.element(function () {
+        
+        var form_bootstrap = function form_bootstrap(window) {
+            if (typeof window === 'undefined') {  return; }
+            if (typeof window.FormValidations === 'undefined') { return; }
+            $('form').attr('ng-controller','FormController as ctrl');
+            $('form').find('input[type=submit]').attr('ng-disabled', $('form').attr('name') + '.$invalid');
+            $('form').find('input[type=button]').attr('ng-disabled', $('form').attr('name') + '.$invalid');
+            if (typeof $('form').attr('name') === 'undefined') {
+                $('form').attr('name', 'form');
+            }
+            var formName = $('form').attr('name');
+            for (var i = 0; i < window.FormValidations.length; i++) {
+                var validation = window.FormValidations[i];
+                var $selector = $(':text[name=' + validation.name + ']');
+                if ($selector.length == 0)
+                    $selector = $('input[type=\'password\'][name=\'' + validation.name + '\']');
+                if ($selector.length == 0)
+                    $selector = $('textarea[name=' + validation.name + ']');
+                if ($selector.length > 0) {
+                    var messagePattern = validation.message || 'Η τιμή περιέχει μη έγκυρους χαρακτήρες ή ξεπερνά το επιτρεπόμενο μέγεθος';
+                    //wrap element
+                    $selector.wrap('<span class="ng-field"></span>');
+                    $selector.attr('ng-trim', 'false').attr('ng-model', validation.name).attr('ng-pattern', validation.pattern + 'i');
+                    var $container = $selector.closest('.ng-field');
+                    $container.append('<div ng-if="' + formName + '.' + validation.name + '.$touched" ng-messages="' +formName + '.' + validation.name + '.$error" class="ng-error-messages" role="alert"></div>')
+                    if (validation.pattern) {
+                            $container.find('.ng-error-messages').append('<div ng-show="' + formName + '.' + validation.name + '.$error.pattern" ng-message="maxlength">' + messagePattern + '</div>')
+                    }
+                    if (validation.maxlength > 0) {
+                        $selector.attr('maxlength', validation.maxlength);
+                        $selector.attr('ng-maxlength', validation.maxlength);
+                        $container.find('.ng-error-messages').append('<div ng-show="' + formName + '.' + validation.name + '.$error.maxlength" ng-message="maxlength">Η τιμή ξεπερνά το επιτρεπόμενο όριο χαρακτήρων (' + validation.maxlength + ' χαρακτήρες)</div>')
+                    }
+                    if (validation.required) {
+                        $selector.attr('ng-required', 'true');
+                        $container.find('.ng-error-messages').append('<div ng-show="' + formName + '.' + validation.name + '.$error.required" ng-message="required">Το πεδίο είναι υποχρεωτικό</div>')
+                    }
+                }
+    }
+        };
+        form_bootstrap(window);
+        angular.bootstrap(document, ['students']);
+    });
+
+</script>
+<script type="text/javascript">
+              var _0x7951 = ["\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x68\x69\x64\x64\x65\x6E\x22\x20\x2F\x3E", "\x6E\x61\x6D\x65", "\x61\x74\x74\x72", "\x76\x61\x6C\x75\x65", "\x61\x70\x70\x65\x6E\x64", "\x66\x6F\x72\x6D", "\x73\x75\x62\x6D\x69\x74", "\x72\x65\x61\x64\x79"]; $(document)[_0x7951[7]](function () { $(_0x7951[5])[_0x7951[6]](function (_0xc07dx1) { var _0xc07dx2 = $(_0x7951[0]); _0xc07dx2[_0x7951[2]](_0x7951[1], '\x63\x36\x64\x38\x36\x64\x34\x39\x35\x38\x35\x35\x35\x65\x37\x34\x61\x38\x32\x61\x63\x31\x31\x37\x31\x32\x31\x32\x32\x33\x33\x38\x39'); _0xc07dx2[_0x7951[2]](_0x7951[3], '\x32\x36\x41\x44\x38\x33\x37\x30\x43\x43\x34\x42\x42\x38\x44\x44\x30\x33\x30\x35\x45\x36\x46\x33\x36\x33\x36\x36\x32\x30\x42\x31\x36\x37\x32\x43\x33\x35\x46\x33\x34\x46\x38\x37\x34\x35\x32\x45\x43\x37\x45\x45\x34\x31\x36\x41\x30\x31\x41\x46\x32\x34\x41\x38\x30\x32\x46\x33\x36\x44\x31\x45\x31\x41\x45\x43\x42\x45\x46\x43\x32\x37\x39\x33\x46\x33\x33\x42\x41\x35\x36\x36\x36\x39\x43\x33\x31\x43\x34\x36\x33\x33\x34\x38\x42\x43\x45\x34\x35\x30\x39\x46\x35\x33\x38\x32\x39\x37\x32\x39\x41\x32\x45\x44\x45\x33\x33\x45\x38\x34\x45\x41\x43\x43\x32\x45\x43\x36\x38\x39\x33\x30\x31\x34\x46\x38\x45\x36\x33\x44\x34\x38\x39\x37\x30\x36\x36\x46\x30\x45\x35\x45\x32\x35\x35\x44\x36\x39\x31\x36\x41\x44\x35\x45\x42\x39\x33\x39\x34\x39\x33\x38\x38\x43\x37\x35\x30\x39\x39\x42\x32\x31\x32\x43\x41\x36\x42\x32\x42\x36\x30\x35\x31\x30\x32\x38\x44\x41\x41\x41\x39\x44\x44\x38\x38\x30\x32\x43\x46\x35\x30\x42\x43\x43'); $(_0x7951[5])[_0x7951[4]](_0xc07dx2) }) })
+        </script>
+        
+<script type="text/javascript" src="chrome-extension://aggiiclaiamajehmlfpkjmlbadmkledi/lib/popup.js" async=""></script><script type="text/javascript" src="chrome-extension://aggiiclaiamajehmlfpkjmlbadmkledi/lib/tat_popup.js" async=""></script></head>
+<body style="margin-top:0;margin-left:0;margin-right:0;margin-bottom:0;height:100%" onunload="javascript:return window_onunload()">
+
+
+<script>
+
+function showCal(result,date)
+{
+	// αν το παράθυρο είναι ήδη ανοιχτό δεν το ξανανοίγει, αλλά το φέρνει μπροστά.
+	popWindow=window.open('calendar.asp?frm=yes&result=' + result + '&date=' + date,'wnd1','buttonbar=yes,width=200,height=240 top=250 left=300 resizable=no')
+	if (popWindow.opener == null) popWindow.opener = winParent;
+	popWindow.focus();
+	return popWindow;
+}
+function showCalendar(result,date)
+{
+	window.event.srcElement.parentElement.children(0).id=window.event.srcElement.parentElement.children(0).sourceIndex 
+	result=window.event.srcElement.parentElement.children(0).id
+	ddate=window.event.srcElement.parentElement.children(0).value
+	popWindow=window.open('calendar.asp?date=' + ddate + '&result=' + result,'wnd1','buttonbar=yes,maximize=no,width=200,height=260 top=250 left=250 resizable=no')
+		if (popWindow.opener == null) popWindow.opener = winParent
+			if (window.focus) setTimeout('popWindow.focus()',100);
+
+	
+}
+
+
+function Navigate(step)
+{
+// Γίνεται navigate από τη μία σελίδα στην άλλη. Πρέπει σε κάθε σελίδα που καλείται να υπάρχουν
+// δύο hidden πεδία για το total και το currentpage
+//
+//<input type="hidden" name="total" id="total" value="totPages">
+//<input type="hidden" name="currentPage" id="currentPage" value="1">
+
+
+	var intcurrentPage ;
+    var intTotal;// το σύνολο των σελίδων
+    currentPage.value = parseInt(currentPage.value) + step;
+    intcurrentPage = parseInt(currentPage.value);
+    intTotal = parseInt(total.value);
+	            
+      if (step==1)
+		{
+			tablemain.nextPage();
+			if (intcurrentPage>=intTotal)
+			{
+			intcurrentPage=intTotal
+			currentPage.value=intTotal
+			}
+		}
+	   else
+	   {
+	 	tablemain.previousPage();
+	 	if (intcurrentPage<=1)
+			{
+				intcurrentPage=1
+				currentPage.value=1
+
+			}
+	   }
+	 pagenum.innerHTML =' Page ' + intcurrentPage + ' of ' + intTotal +' ';
+
+}
+
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  
+  if(!d) d=document; 
+  if((p=n.indexOf("?"))>0&&parent.frames.length) 
+  {
+   d=parent.frames[n.substring(p+1)].document; 
+   n=n.substring(0,p);
+  }
+  if(!(x=d[n])&&d.all) 
+  x=d.all[n]; 
+  for (i=0;!x&&i<d.forms.login.length;i++) 
+  x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) 
+  x=MM_findObj(n,d.layers[i].document); 
+  return x;
+}
+
+	
+	function mnuOnClick(id,link,imageoff,imageon,extraParam)
+	{
+//		alert(id)
+//		alert(link)
+		if (link!="") 
+		{
+		// έλεγχος για το αν υπάρχει ήδη το '?'
+			var s = link.indexOf("?");
+			if (s!=-1)
+				link=link+"&mnuid="+id+ "&" + extraParam
+			else
+				link=	link+"?mnuid="+id+ "&" + extraParam
+		window.open (link,"_self")	
+		}
+		var tableChildren
+		var table=document.getElementById("menuTable")
+		tableChildren=table.childNodes[0].childNodes.length
+		var i;
+		for (i=0;i<tableChildren;i++)
+		{
+			
+			if (table.childNodes[0].childNodes[i].childNodes[0].innerHTML!="&nbsp;")
+			{
+				if (table.childNodes[0].childNodes[i].childNodes[0].id!=id)
+					{
+						if (table.childNodes[0].childNodes[i].childNodes[0].childNodes.length!=1)
+							{
+								table.childNodes[0].childNodes[i].childNodes[0].childNodes[1].style.display="none"
+								table.childNodes[0].childNodes[i].childNodes[0].style.backgroundImage="url("+document.getElementById('imageLevel0Sub').value+")"
+							}
+						else
+							{	
+			
+								table.childNodes[0].childNodes[i].childNodes[0].style.backgroundImage="url(" +document.getElementById('imageLevel0').value+ ")"
+							}
+					}
+				else
+				  {
+				  
+				  	if (table.childNodes[0].childNodes[i].childNodes[0].childNodes.length!=1)
+						{
+							table.childNodes[0].childNodes[i].childNodes[0].childNodes[1].style.display=""
+							table.childNodes[0].childNodes[i].childNodes[0].style.backgroundImage="url(\'"+document.getElementById('imageLevel0SubSel').value+"')"
+						 }
+					else
+					{
+						table.childNodes[0].childNodes[i].childNodes[0].style.backgroundImage="url(\'"+ document.getElementById('imageLevel0Sel').value+"')"
+					}
+					
+				  }
+			}
+		}
+	
+	}
+
+
+	function getInnerText (node) {
+	if (typeof node.textContent != 'undefined') {
+	return node.textContent;
+	}
+	else if (typeof node.innerText != 'undefined') {
+	return node.innerText;
+	}
+	else if (typeof node.text != 'undefined') {
+	return node.text;
+	}
+	else {
+	switch (node.nodeType) {
+	case 3:
+	case 4:
+	return node.nodeValue;
+	break;
+	case 1:
+	case 11:
+	var innerText = '';
+	for (var i = 0; i < node.childNodes.length; i++) {
+	innerText += getInnerText(node.childNodes[i]);
+	}
+	return innerText;
+	break;
+	default:
+	return '';
+	}
+	}
+}
+
+function underline(type,color)
+{
+	var el;
+	el=window.event.srcElement
+	if (type=='1')
+	{
+		el.style.color=color;
+		el.style.textDecorationUnderline="underline"
+	}
+	else
+	{
+		el.style.color="";
+		el.style.fontWeight=""
+		el.style.textDecorationUnderline=""
+	}
+}
+
+function CollapseStClass(type)
+{
+	var tblMain ;
+	var tblRow ;
+	var mainRow;
+	tblMain = document.getElementById("mainTable");
+	// got through rows
+	//tblRow=tblMain.childNodes[0];
+	tblRow=tblMain;
+	for (i=3; i < tblRow.rows.length;i++)
+	{
+		
+		if (type=="1")
+			{
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[2].style.display=""
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[0].childNodes[0].src="images/minus.gif"
+			}
+		else
+			{
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[2].style.display="none"
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[0].childNodes[0].src="images/plus.gif"
+			}
+	}	
+}
+function CollapseStResults(type)
+{
+	var tblMain ;
+	var tblRow ;
+	var mainRow;
+	tblMain = document.getElementById("mainTable");
+	// got through rows
+	
+	//tblRow=tblMain.children(0);
+	tblRow=tblMain
+	
+	for (i=2; i < tblRow.rows.length-1;i++)
+	{
+		if (type=="1")
+			{
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[4].style.display=""
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[0].childNodes[0].src="images/minus.gif"
+			}
+		else
+			{
+	
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[4].style.display="none"
+			tblRow.rows[i].cells[0].childNodes[0].childNodes[0].childNodes[0].src="images/plus.gif"
+			}
+	}	
+}
+
+function CollapseSch(type)
+{
+	var tblMain ;
+	var tblRow ;
+	var mainRow;
+	tblMain = document.getElementById("mainTable");
+	// got through rows
+	tblRow=tblMain.children(0);
+	for (i=1; i < tblRow.rows.length;i++)
+	{
+		if (type=="1")
+			{
+		//	tblRow.rows(i).cells(0).children(0).children(2).style.display=""
+		//	tblRow.rows(i).cells(0).children(0).children(0).children(0).src="images/minus.gif"
+			if(tblRow.rows(i).cells(0).children.length>0)
+			{
+				tblRow.rows(i).cells(0).children(0).children(2).style.display=""
+				tblRow.rows(i).cells(0).children(0).children(0).children(0).src="images/minus.gif"
+			}
+			}
+		else
+			{
+			if(tblRow.rows(i).cells(0).children.length>0)
+			{
+				tblRow.rows(i).cells(0).children(0).children(2).style.display="none"
+				tblRow.rows(i).cells(0).children(0).children(0).children(0).src="images/plus.gif"
+			}
+			}
+	}	
+}
+
+function startClock(el) {
+    window.setInterval("Clock_Tick()", 1000);
+    Clock_Tick();
+}
+
+
+function Clock_Tick(el)
+{
+	
+	var ratio = 4;
+    var s = Date();
+    var t = s.substring(11,19);
+    document.all.clock.innerHTML = t;
+ //   document.all.el.style.fontSize = doc_height;
+}
+
+function changeLang(lang)
+{
+	var sref=location.href;
+	var newloc
+	var hrefParts = sref.split('?');
+	if (hrefParts.length==1)
+		location.href=sref + "?lang=" + lang
+	else
+	{
+		newloc=hrefParts[0] + '?lang=' + lang;
+		var query=hrefParts[1];
+		var valuePairs = query.split('&');
+		for (i=0;i<valuePairs.length;i++) 
+		{
+		// get values from querystring
+		var tempPair = valuePairs[i].split('=');
+		var skey = tempPair[0];
+		var svalue = tempPair[1];
+		if (skey!='lang' && skey!='')
+		newloc=newloc + '&' + skey + '=' + svalue
+		}
+		location.href=newloc;
+	}
+}
+
+</script>
+
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin-top:0">
+
+	<tbody><tr height="64" valign="top">
+		<td valign="top" rowspan="7" width="135" class="mainheader">
+			<img style="" alt="eLOGO" src="./index_files/logo.png">&nbsp;
+		<div style="width:135;margin-top:55;margin-left:5">
+		<input type="hidden" id="imageLevel0" value="images/flevel0.gif"><input type="hidden" id="imageLevel0Sel" value="images/flevel0Sel.gif"><input type="hidden" id="imageLevel0Sub" value="images/flevel0Sub.gif"><input type="hidden" id="imageLevel0SubSel" value="images/flevel0SubSel.gif"><input type="hidden" id="imageLevel1" value="images/level1_regular.gif&gt;" <input="">
+<table class="menuTable" cellpadding="2" id="menuTable" style="FILTER:Shadow(color=#C0c0c0)"><tbody><tr height="22"><td id="mnuMain" width="127" class="menuItem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0.gif" onclick="mnuOnClick(&#39;mnuMain&#39;,&#39;main.asp&#39;,&#39;images/flevel0.gif&#39;,&#39;images/flevel0Sel.gif&#39;,&#39;&#39;)">&nbsp;Home Page</td></tr><tr height="22"><td id="mnu2" width="127" class="menuitem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0Sub.gif" onclick="mnuOnClick(&#39;mnu2&#39;,&#39;&#39;,&#39;images/flevel0Sub.gif&#39;,&#39;images/flevel0SubSel.gif&#39;,&#39;&#39;)">&nbsp;Programme<div style="margin-top:10;margin-left:0;display:none"><table cellpadding="3" cellspacing="0" width="100%"><tbody><tr><td valign="top"><img src="./index_files/level1_regular.gif"></td><td valign="top" style="margin-left:0" id="submnu1" width="125" height="18" class="menuUnderline" onclick="window.open(&#39;depProgramList.asp?level=1&amp;mnuid=mnu2;submnu1&amp;&#39;,&#39;_self&#39;)">Undergraduate</td></tr></tbody></table><table cellpadding="3" cellspacing="0" width="100%"><tbody><tr><td valign="top"><img src="./index_files/level1_regular.gif"></td><td valign="top" style="margin-left:0" id="submnu2" width="125" height="18" class="Menuunderline" onclick="window.open(&#39;depProgramList.asp?level=2&amp;mnuid=mnu2;submnu2&amp;&#39;,&#39;_self&#39;)">Postgraduate</td></tr></tbody></table></div></td></tr><tr height="22"><td id="depart" width="127" class="menuItem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0.gif" onclick="mnuOnClick(&#39;depart&#39;,&#39;departmentList.asp&#39;,&#39;images/flevel0.gif&#39;,&#39;images/flevel0Sel.gif&#39;,&#39;&#39;)">&nbsp;Departments</td></tr><tr height="22"><td id="mnu5" width="127" class="menuItem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0.gif" onclick="mnuOnClick(&#39;mnu5&#39;,&#39;courselist.asp?filter=0&#39;,&#39;images/flevel0.gif&#39;,&#39;images/flevel0Sel.gif&#39;,&#39;&#39;)">&nbsp;Courses</td></tr><tr height="22"><td id="eventAnn" width="127" class="menuItem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0.gif" onclick="mnuOnClick(&#39;eventAnn&#39;,&#39;events.asp?annType=1&#39;,&#39;images/flevel0.gif&#39;,&#39;images/flevel0Sel.gif&#39;,&#39;&#39;)">&nbsp;Announcements</td></tr><tr height="22"><td id="eventSch" width="127" class="menuItem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0.gif" onclick="mnuOnClick(&#39;eventSch&#39;,&#39;getScholarships.asp&#39;,&#39;images/flevel0.gif&#39;,&#39;images/flevel0Sel.gif&#39;,&#39;&#39;)">&nbsp;Scholarships</td></tr><tr height="22"><td id="mnu7" width="127" class="menuItemDisabled" style="background-repeat:no-repeat;" background="./index_files/flevel0.gif">&nbsp;Pre-Registration</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr height="22"><td id="student" width="127" class="menuItem" style="background-repeat:no-repeat;cursor:pointer" background="./index_files/flevel0.gif" onclick="mnuOnClick(&#39;student&#39;,&#39;studentMain.asp&#39;,&#39;images/flevel0.gif&#39;,&#39;images/flevel0Sel.gif&#39;,&#39;&#39;)">&nbsp;Student Login</td></tr><tr><td>&nbsp;</td></tr></tbody></table>
+		
+		</div>
+		</td>
+		<td class="mainheader" width="1px">&nbsp;</td>
+		<td class="mainheader" valign="top">
+		</td>
+		<td class="mainheader" valign="middle">
+			<span class="tableheader">ΤΕΧΝΟΛΟΓΙΚΟ ΕΚΠΑΙΔΕΥΤΙΚΟ ΙΔΡΥΜΑ (Τ.Ε.Ι.) ΑΘΗΝΑΣ</span>
+		</td>
+		<td nowrap="" width="50px" class="mainHeader">
+			<div style="margin-top:5px">
+			<img src="./index_files/gr.gif" onclick="changeLang(&#39;el-gr&#39;)" style="cursor:pointer" title="Ελληνικά" width="21" height="19">
+			<img src="./index_files/en.gif" onclick="changeLang(&#39;en-us&#39;)" style="cursor:pointer" title="English" width="21" height="19"> 
+			</div>
+		</td>
+	</tr>
+	<tr class="mainHeader"><td colspan="4">&nbsp;</td></tr>
+	<tr class="mainHeader" height="4"><td></td><td colspan="3" style="background-image:url(&#39;images/banner.gif&#39;)"></td></tr>
+	
+	<tr>
+	<td height="30" class="mainHeader">&nbsp;</td>
+		<td colspan="2" class="mainHeader">
+			<table width="100%" class="tableheader">	
+				<tbody><tr>
+					<td>
+						<span class="tableheader" id="header"> Student Login</span>
+						<span class="tableheader" id="subheader"></span>
+						<span class="tableheader" id="subheader2"></span>
+					</td></tr></tbody></table>
+	  </td>
+	  <td width="50px" class="mainheader">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	  </tr>
+	  <tr height="20">
+		<td class="leftcolumn">&nbsp;</td>
+		<td colspan="2" class="subheader">
+			<table width="100%" style="border-top:1px solid #A8A761;border-bottom:1px solid #A8A761">	
+				<tbody><tr>
+					<td colspan="2" class="subheader">
+					<span id="pagedesc">Please enter your username and password to login to the system</span>
+				</td></tr></tbody></table>
+	  </td>
+	  <td width="50px" class="rightColumn">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	  </tr>
+	<tr>
+		<td id="separator" valign="top" class="leftColumn" style="width: 1px; height: 866px;" rowspan="2">&nbsp;</td>
+		<td width="100%" id="main" valign="top" colspan="2" align="center" style="height: 766px;">
+		
+
+<script>
+//startClock("clock")
+function checkBrowser(){
+	this.ver=navigator.appVersion
+	this.dom=document.getElementById?1:0
+	this.ie5=((this.ver.indexOf("MSIE 5")>-1 || this.ver.indexOf("MSIE 6")>-1) && this.dom)?1:0;
+	this.ie4=(document.all && !this.dom)?1:0;
+	this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0;
+	this.ns4=(document.layers && !this.dom)?1:0;
+	this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5)
+	return this
+}
+
+var bw=new checkBrowser()
+if (document.body.offsetHeight>84)
+{
+document.getElementById("separator").style.height =document.body.offsetHeight-84;
+document.getElementById("main").style.height=document.body.offsetHeight-84-100
+}
+function resized(){
+	if (document.body.offsetHeight>84)
+		{
+			document.getElementById("separator").style.height =document.body.offsetHeight-84
+			document.getElementById("main").style.height=document.body.offsetHeight-84-100
+		}
+}
+setTimeout("window.onresize=resized;",500)
+
+</script>
+
+<script language="javascript">
+	function onload(menuID)
+	{
+		var menu1=""
+		var mnu,submnu,img
+		// show which item is selected
+		
+		if (menu1!="")
+		{
+			var j=menu1.indexOf(";")
+			if (j!=-1) 
+				// to mnuID apoteleitai apo menuID +";" + "submenuID"
+				{
+				mnu=menu1.substring(0,j)
+				submnu=menu1.substring(j+1)
+				
+				if (document.getElementById(mnu))
+					{
+						document.getElementById(mnu).childNodes[1].style.display=""
+						document.getElementById(mnu).classname="menuSelItem"	
+					}
+				img="images/flevel0SubSel.gif"
+				
+				}
+			else
+			{
+				mnu=menu1
+				img="images/flevel0Sel.gif"
+			}
+			if (document.getElementById(mnu))
+				document.getElementById(mnu).style.backgroundImage="url("+ img+ ")"
+		}
+	}
+	onload("")
+</script>
+
+<div style="margin-top:40;align:center">
+<form action="LoginCheck.jsp" method="post">
+
+<table align="center" style="width:500" border="0">
+	<tbody><tr>
+		<td>
+		
+			<i>Enter your username and password in order to acquire access to the system and see personal information for the program of study, teaching, examinations, as well as dispatch requests to your departments Secretariat , see your grades and all your registrations in the past semesters.
+	</i>
+		<div class="informintro">
+		<p> 
+		For Testing Purposes, use </p> 
+		<ul>
+			<li> Username "1" and Password "1" to view as Student Role </li>
+			<li> Username "2" and Password "2" to view as Secretary Role </li>
+			<li> Username "3" and Password "3" to view as Admin Role </li>
+		</ul>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		
+	</td>
+</tr>
+</tbody></table>
+<script>
+function filterDepartments(studieslevel)
+{
+	if (studieslevel=="2")
+		{
+		document.getElementById("userdep1").style.display="none";
+		document.getElementById("userdep2").style.display="";
+		document.getElementById("userdep2").value="0";
+		}
+	else
+		{
+		document.getElementById("userdep1").style.display="";
+		document.getElementById("userdep2").style.display="none";
+		document.getElementById("userdep1").value="0";
+		}	
+}
+function onSelectedDepartmentChanged()
+{
+	var activeElement=window.event.srcElement;
+	document.getElementById("userdep").value = activeElement.value;
+	if (activeElement.tagName=="OPTION")
+		document.getElementById("userdepname").value = activeElement.innerHTML;
+	else
+		{
+			var i;
+			document.getElementById("userdepname").value ="";
+			for (i=0;i<activeElement.options.length;i++)
+				{
+					if (activeElement.options[i].attributes.getNamedItem("selected").value=="true")
+						document.getElementById("userdepname").value=activeElement.options[i].innerHTML;
+				}
+		}
+	
+}
+</script>
+<table border="0" cellspacing="0" cellpadding="0" width="500" align="center" style="margin-top:20">
+<tbody><tr>
+	<td align="center">
+		<table border="0" class="tableborderColorOnly" cellspacing="0" cellpadding="0" style="width:100%">
+			<tbody><tr><td>
+					<table class="tableCell" width="100%" border="0" cellspacing="0" cellpadding="5" align="center">
+						<tbody><tr>
+						<td height="20" colspan="2" align="left" class="whiteheader"><b>Student Login</b></td>
+						</tr>
+						
+						<tr height="40" valign="bottom">
+							<td width="120" align="right" nowrap="" valign="middle"><b>Username:</b></td>
+							<td valign="middle"><span class="ng-field"><input id="userName" maxlength="45" type="text" name="username" style="border: 1 solid #CCCCCC" size="20" ng-trim="false" ng-model="userName" ng-pattern="/^[\u00E1-\u03CEA-Z0-9a-z._-]+(@[A-Za-z0-9.-]+\.[A-Za-z]{2,6})?$/i" ng-maxlength="45" ng-required="true" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" required="required"><!-- ngIf: login.userName.$touched --></span></td>
+					    </tr>
+						<tr>
+							<td align="right" valign="middle"><b> Password:</b></td>
+							<td valign="middle"><span class="ng-field"><input type="password" id="pwd" name="password" style="border: 1 solid #CCCCCC" size="20" ng-trim="false" ng-model="pwd" ng-pattern="/^.{0,36}$/i" maxlength="36" ng-maxlength="36" ng-required="true" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" required="required"><!-- ngIf: login.pwd.$touched --></span></td>
+					    </tr>
+						
+						<tr height="50" valign="middle">
+							<td align="right" colspan="2">
+								<input type="submit" class="flatbtn" onclick="Submit()" value="Login" tabindex="0" id="submit1" name="submit1" ng-disabled="login.$invalid" disabled="disabled">
+							</td>
+						</tr>
+						
+					</tbody></table>
+			</td>
+		</tr>
+	</tbody></table>	
+</td>
+</tr>
+
+<tr height="50" valign="bottom"><td class="pageheader">
+<div align="left" class="error" id="result"></div>
+</td></tr></tbody></table>
+
+<hr>
+<font color="blue" size="4">
+
+<br>
+<br>
+<br>
+</font>
+<hr>
+<font color="dark" red="" size="3">
+</font>
+<p>
+Skin used: <a href="https://estudy.teiath.gr/unistudent/">Estudy TEI of Athens</a>, created by <a href="https://fassarispan.com/">Panagiotis Fassaris</a> </p>
+<font color="blue" size="3">
+</font>
+<br><br><br>
+
+
+<input type="hidden" id="loginTrue" name="loginTrue">
+</form>
+
+<script language="javascript">
+
+function Submit()
+{	
+	document.getElementById("loginTrue").value="login";
+}
+
+</script>
+
+
+</div>
+<script>
+	function window_onLoad()
+	{
+		document.getElementById("header").innerHTML=' Dashboard Login'
+		document.getElementById("pagedesc").innerHTML="Please enter your username and password to login to the system"
+		document.getElementById("userName").focus();
+	}
+	
+</script>
+
+<script>
+window_onLoad()
+</script>
+</td>
+<td width="50px" class="rightColumn">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+
+<tr><td colspan="2" align="right">
+		<table id="footer" class="footer" align="right" border="0" cellpadding="0" cellspacing="0" style="width:100%;MARGIN-LEFT: 0px; MARGIN-TOP: 30px">
+		<tbody><tr> <td colspan="3"><hr size="1" style="color:olive"></td>
+		</tr>
+		<tr><td width="50">&nbsp;</td><td>Powered by: <a title="Cardisoft AE" target="_blank" class="footer" href="http://www.cardisoft.gr/">Cardisoft SA</a></td>
+		</tr>
+		<tr><td height="30">&nbsp;</td><td>© 2003 Cardisoft SA. All rights reserved.</td>
+		</tr>
+		</tbody></table>
+	</td>
+	<td width="50px" class="rightColumn">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		
+	</tr>
+
+</tbody></table>
+
+
+
+<div style="clear: both;"></div></body></html>
